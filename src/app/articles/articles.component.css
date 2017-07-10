@@ -1,0 +1,31 @@
+/* things necessary to make unordered lists not look shit */
+li {
+  display: flex;
+  width: 300px;
+  height: auto;
+  margin: 10px 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  justify-content: center;
+
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+div {
+  padding-top: 20px;
+  margin: 0 auto;
+}

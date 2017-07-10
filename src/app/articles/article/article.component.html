@@ -1,0 +1,7 @@
+<div class="card card-inverse" [ngClass]="{'card-success': status === 'alive', 'card-danger': status === 'dead'}">
+  <div class="card-block">
+    <h3 class="card-title"> {{ article.title }}</h3>
+    <p class="card-text">{{ article.body }}</p>
+    <small>{{ article.dateCreated }}</small>
+  </div>
+</div>
