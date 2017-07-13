@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Article } from './article.model';
-// import { ArticleService } from '../article.service';
+import { ArticlesService } from '../articles.service';
+import { FilterArticlesService } from '../filter-articles.service';
 
 @Component({
   selector: 'app-articles',
@@ -9,21 +10,20 @@ import { Article } from './article.model';
   // providers: [ ArticleService ]
 })
 export class ArticlesComponent implements OnInit {
-  // allowNewArticle = false;
-  articles: Article[] = [
-    new Article('This is the title', 'This is the body', Date.now())
-  ];
-  // articleName = '';
+  articles: any = [];
+  query: string;
 
-  constructor() { }
+  constructor(private articlesService: ArticlesService,
+              private filterArticlesService: FilterArticlesService) { }
 
-  ngOnInit() { }
-
-  onCreateArticle() {
-    // this.articles.push(this.articleName);
-  }
-
-  onUpdateArticleName(event: Event) {
-    // this.articleName = (<HTMLTextAreaElement>event.target).value;
+  ngOnInit() {
+    this.articlesService.getAllArticles().subscribe(articles => {
+      this.articles = articles;
+      console.log(articles.length);
+    });
+    this.filterArticlesService.getQuery().subscribe(query => {
+      this.query = query.text;
+      console.log(query.text);
+    });
   }
 }

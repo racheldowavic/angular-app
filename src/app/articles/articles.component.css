@@ -1,9 +1,34 @@
 /* things necessary to make unordered lists not look shit */
+
 li {
   display: flex;
   width: 300px;
+  /*width: 30%;*/
+  min-height: inherit;
   height: auto;
   margin: 10px 10px;
+  margin-bottom: 10px;
+  flex-basis: auto;
+  flex-grow: 1;
+}
+
+li .card {
+  flex: 1 0 auto;
+  height: 100%;
+}
+
+app-article {
+  transition: all .2s ease-in-out;
+  width: 100%;
+}
+
+app-article:focus {
+  outline: 0;
+}
+
+app-article:hover {
+  transform: scale(1.05, 1.05);
+  cursor: pointer;
 }
 
 ul {
@@ -23,9 +48,10 @@ ul {
   flex-wrap: wrap;
   -webkit-flex-direction: row;
   flex-direction: row;
+  item-align: stretch;
 }
 
-div {
+/*div {
   padding-top: 20px;
   margin: 0 auto;
-}
+}*/

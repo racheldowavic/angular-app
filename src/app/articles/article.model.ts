@@ -1,11 +1,15 @@
 export class Article {
+  public _id: String;
   public title: String;
+  public subtitle: String;
   public body: String;
-  public dateCreated: Number;
+  public created_at: Date;
 
-  constructor(title: String, body: String, dateCreated: Number) {
+
+  constructor(id: String, title: String, body: String, created_at: Date) {
+    this._id = id;
     this.title = title;
     this.body = body;
-    this.dateCreated = dateCreated;
+    this.created_at = created_at;
   }
 }

@@ -1,7 +1,8 @@
-<div class="card card-inverse" [ngClass]="{'card-success': status === 'alive', 'card-danger': status === 'dead'}">
+<div class="card card-inverse" [ngStyle]="{ backgroundColor: this.colour }" [ngClass]="{'arabic': inArabic }"style="height: 100%;">
   <div class="card-block">
-    <h3 class="card-title"> {{ article.title }}</h3>
-    <p class="card-text">{{ article.body }}</p>
-    <small>{{ article.dateCreated }}</small>
+    <h2 class="card-title"> {{ this.article.title }}</h2>
+    <h4 class="card-subtitle">{{ this.article.subtitle }}</h4>
+    <p [MathJax]="this.article.body" class="card-text" style="padding-top: 10px;" *ngIf="expanded === 'chosen'"></p>
+    <small>{{ this.article.created_at | amDateFormat:'LL hh:mmA' }}</small>
   </div>
 </div>

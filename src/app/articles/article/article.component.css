@@ -1,0 +1,10 @@
+/*Colours!*/
+.card {
+  border: none;
+}
+
+@import url(https://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css);
+
+.arabic {
+  font-family: 'Droid Arabic Naskh', sans-serif;
+}

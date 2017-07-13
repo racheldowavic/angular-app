@@ -1,4 +1,4 @@
-<div>
+<div class="container">
   <!-- <label>Article Title</label> -->
   <!-- <input type="text" class="form-control" (input)="onUpdateArticleName($event)"> -->
   <!-- <input type="text" [(ngModel)]="articleName"/>
@@ -7,8 +7,8 @@
   <p *ngIf="articleCreated">Article with title {{ articleName }} was created</p> -->
   <!-- <p>{{ articleName }}</p> -->
   <ul>
-    <li *ngFor="let a of articles">
-      <app-article [article]="a"></app-article>
+    <li *ngFor="let a of articles | myFilterPipe: query">
+      <app-article [routerLink]="['/articles', a._id]" [article]="a"></app-article>
     </li>
   </ul>
 </div>
