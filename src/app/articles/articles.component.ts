@@ -19,11 +19,9 @@ export class ArticlesComponent implements OnInit {
   ngOnInit() {
     this.articlesService.getAllArticles().subscribe(articles => {
       this.articles = articles;
-      console.log(articles.length);
     });
     this.filterArticlesService.getQuery().subscribe(query => {
       this.query = query.text;
-      console.log(query.text);
     });
   }
 }
